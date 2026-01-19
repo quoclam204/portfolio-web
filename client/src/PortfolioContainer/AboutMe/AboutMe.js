@@ -14,15 +14,16 @@ export default function AboutMe(props) {
 
   const SCREEN_CONSTSANTS = {
     description:
-      "Full stack web and mobile developer with background knowledge of MERN stacks with redux, along with a knack of building applications with utmost efficiency. Strong professional with a BSC willing to be an asset for an organization.",
+      "Web Backend–oriented developer with experience in building web applications using ASP.NET MVC and three-tier architecture. Skilled in developing RESTful APIs, handling business logic, and managing databases, with working knowledge of React, Node.js, and Express.",
     highlights: {
       bullets: [
-        "Full Stack web and mobile development",
-        "Interactive Front End as per the design",
-        "React and React Native",
-        "Redux for State Mnanagement",
-        "Building REST API",
-        "Managing database",
+        "Web backend development with ASP.NET",
+        "MVC and three-tier architecture",
+        "Building RESTful APIs",
+        "Business logic implementation",
+        "Database design and management",
+        "Basic knowledge of Node.js and Express",
+        "Frontend integration using React",
       ],
       heading: "Here are a Few Highlights:",
     },
