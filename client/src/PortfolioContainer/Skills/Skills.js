@@ -45,9 +45,9 @@ export default function Skills(props) {
   ];
 
   return (
-    <div>
+    <div className="fade-in" id={props.id || ""}>
       <ScreenHeading title={"Skills"} subHeading={"My Technical Skills"} />
-      <section className="skills-section fade-in" id={props.id || ""}>
+      <section className="skills-section">
         <div className="container">
           <div className="skills-wrapper">
             {skillCategories.map((category, catIndex) => (

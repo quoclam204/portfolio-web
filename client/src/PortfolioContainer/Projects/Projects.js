@@ -83,12 +83,12 @@ export default function Projects(props) {
     ];
 
     return (
-        <div>
+        <div className="fade-in" id={props.id || ""}>
             <ScreenHeading
                 title={"Projects"}
                 subHeading={"My Recent Works"}
             />
-            <section className="projects-section fade-in" id={props.id || ""}>
+            <section className="projects-section">
                 <div className="container">
                     <div className="row">
                         <OwlCarousel
