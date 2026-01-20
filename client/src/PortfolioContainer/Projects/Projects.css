@@ -1,6 +1,5 @@
 .projects-section {
     background-color: transparent;
-    padding: 80px 0 80px 0;
     min-height: fit-content;
 }
 
@@ -8,7 +7,6 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-top: -80px;
 }
 
 /* Project Item Styling */

@@ -2,7 +2,7 @@
   min-height: 100vh;
   /* background-image: url("../../assets/ContactMe/contact_us.jpeg"); */
 
-  margin: 100px 0 -450px 0;
+  margin: 50px 0 -450px 0;
 }
 
 .central-form {
@@ -93,6 +93,7 @@ textarea:focus {
   border: 2px solid rgba(30, 85, 250, 0.47);
   background-color: #fff;
 }
+
 form input:focus {
   border: 2px solid rgba(30, 85, 250, 0.47);
   background-color: #fff;
@@ -128,10 +129,12 @@ button .load img {
   width: 60px;
   color: green;
 }
+
 .col i {
   padding: 7px;
   color: #fff;
 }
+
 .col i:hover {
   transform: scale(1.5);
 }
@@ -155,6 +158,7 @@ button .load img {
     flex: 0.9;
   }
 }
+
 @media screen and (max-width: 414px) {
   .central-form h2 {
     font-size: 16px;
