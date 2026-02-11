@@ -10,6 +10,7 @@ import "./Projects.css";
 import commerceImg from "../../assets/Projects/commerce.png";
 import trendyframeImg from "../../assets/Projects/trendyframe.png";
 import chattingAppImg from "../../assets/Projects/chatting-app.png";
+import techgearshopImg from "../../assets/Projects/techgearshop.png";
 
 
 export default function Projects(props) {
@@ -71,15 +72,15 @@ export default function Projects(props) {
             liveUrl: "https://weather-dashboard.com",
             description: "Real-time weather information with interactive maps and forecasts"
         },
-        // {
-        //     id: 4,
-        //     name: "Social Media Clone",
-        //     image: "https://via.placeholder.com/400x300/9B59B6/ffffff?text=Social+Media",
-        //     technologies: ["React", "Redux", "Node.js", "PostgreSQL"],
-        //     codeUrl: "https://github.com/yourusername/social-clone",
-        //     liveUrl: "https://social-clone.com",
-        //     description: "A social media platform with posts, comments, and user profiles"
-        // },
+        {
+            id: 4,
+            name: "TechGearShop",
+            image: techgearshopImg,
+            technologies: ["ASP.NET MVC", "C#", "Bootstrap 5", "JavaScript", "SCSS"],
+            codeUrl: "https://github.com/quoclam204/TechGearShop",
+            liveUrl: "https://techgearshop.com",
+            description: "E-commerce platform for tech products built with ASP.NET MVC architecture"
+        },
     ];
 
     return (
