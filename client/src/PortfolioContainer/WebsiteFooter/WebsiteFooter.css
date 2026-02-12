@@ -1,0 +1,135 @@
+.website-footer {
+    background-color: #1f2235;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    margin-top: 0;
+    width: 100%;
+    box-shadow: 0 -5px 20px -2px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #ff5823;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-section h4 {
+    color: #ff5823;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.footer-section p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff5823;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff5823;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #888888;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-section {
+        min-width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-section ul li a:hover {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .website-footer {
+        padding: 30px 15px 15px;
+    }
+
+    .footer-section h3 {
+        font-size: 20px;
+    }
+
+    .footer-section h4 {
+        font-size: 16px;
+    }
+
+    .social-links a {
+        font-size: 24px;
+    }
+}
