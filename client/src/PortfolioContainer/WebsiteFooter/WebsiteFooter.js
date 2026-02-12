@@ -2,22 +2,29 @@ import React from "react";
 import "./WebsiteFooter.css";
 
 export default function WebsiteFooter() {
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <footer className="website-footer">
             <div className="footer-content">
                 <div className="footer-section">
                     <h3>Nguyen Le Quoc Lam</h3>
-                    <p>Full Stack Web Developer</p>
+                    <p>Backend Web Developer</p>
                 </div>
 
                 <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#Home">Home</a></li>
-                        <li><a href="#AboutMe">About</a></li>
-                        <li><a href="#Resume">Resume</a></li>
-                        <li><a href="#Projects">Projects</a></li>
-                        <li><a href="#ContactMe">Contact</a></li>
+                        <li><a onClick={() => scrollToSection("Home")}>Home</a></li>
+                        <li><a onClick={() => scrollToSection("AboutMe")}>About</a></li>
+                        <li><a onClick={() => scrollToSection("Resume")}>Resume</a></li>
+                        <li><a onClick={() => scrollToSection("Projects")}>Projects</a></li>
+                        <li><a onClick={() => scrollToSection("ContactMe")}>Contact</a></li>
                     </ul>
                 </div>
 
