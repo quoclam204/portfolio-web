@@ -27,26 +27,24 @@ export default function Profile() {
           <div className="profile-details-name">
             <span className="primary-text">
               {" "}
-              Hello, I'M <span className="highlighted-text">Nguyen Le Quoc Lam</span>
+              Hello, I'm <span className="highlighted-text">Nguyen Le Quoc Lam</span>
             </span>
           </div>
           <div className="profile-details-role">
-            <span className="primary-text">
-              <h1>
-                <Typical
-                  loop={Infinity}
-                  steps={[
-                    "Enthusiastic Dev 😎",
-                    1000,
-                    "Backend Developer 💻",
-                    1000,
-                  ]}
-                />
-              </h1>
-            </span>
+            <h1 className="primary-text">
+              <Typical
+                loop={Infinity}
+                steps={[
+                  "Web Engineer 🌐",
+                  1000,
+                  "Backend Developer 💻",
+                  1000,
+                ]}
+              />
+            </h1>
 
             <span className="profile-role-tagline">
-              Knack of building scalable and reliable backend systems.
+              I enjoy building backend systems and learning new technologies.
             </span>
           </div>
           <div className="profile-options">
