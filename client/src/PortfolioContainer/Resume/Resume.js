@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -8,6 +8,7 @@ const Resume = (props) => {
   /* STATES */
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
+  const containerRef = useRef(null);
 
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
@@ -46,160 +47,216 @@ const Resume = (props) => {
   const resumeBullets = [
     { label: "Education", logoSrc: "education.svg" },
     { label: "Work History", logoSrc: "work-history.svg" },
-    { label: "Programming Skills", logoSrc: "programming-skills.svg" },
-    { label: "Projects", logoSrc: "projects.svg" },
+    // TODO: Thêm phần mới thay thế Programming Skills (ví dụ: Certifications, Languages, Awards)
+    // { label: "Certifications", logoSrc: "certifications.svg" },
+    // { label: "Languages", logoSrc: "languages.svg" },
+    // TODO: Thêm phần mới thay thế Projects (đã có trang Projects riêng)
+    // { label: "Awards", logoSrc: "awards.svg" },
     { label: "Interests", logoSrc: "interests.svg" },
   ];
 
-  //here we have
-  const programmingSkillsDetails = [
-    { skill: "JavaScript", ratingPercentage: 85 },
-    { skill: "React JS", ratingPercentage: 85 },
-    { skill: "React Native", ratingPercentage: 85 },
-    { skill: "Express JS", ratingPercentage: 89 },
-    { skill: "Node JS", ratingPercentage: 89 },
-    { skill: "Mongo Db", ratingPercentage: 70 },
-    { skill: "Core Java", ratingPercentage: 80 },
-    { skill: "HTML", ratingPercentage: 80 },
-    { skill: "CSS", ratingPercentage: 80 },
-  ];
+  /* TODO: THÊM DỮ LIỆU MỚI THAY THẾ Programming Skills và Projects
+   * Gợi ý:
+   * 1. Certifications (Chứng chỉ)
+   * 2. Languages (Ngôn ngữ: Tiếng Việt, Tiếng Anh)
+   * 3. Awards & Achievements (Giải thưởng)
+   * 4. Volunteer Experience (Hoạt động tình nguyện)
+   */
 
-  const projectsDetails = [
-    {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: "2020", toDate: "2021" },
-      description:
-        "A Personal Portfolio website to showcase all my details and projects at one place.",
-      subHeading: "Technologies Used: React JS, Bootsrap",
-    },
-    {
-      title: "Mobile E-shop ",
-      duration: { fromDate: "2020", toDate: "2021" },
-      description:
-        "An ecommerce application designed to sell products online wth payment system integration",
-      subHeading:
-        "Technologies Used:  React Native, Mongo DB, Express Js, Node Js, Redux.",
-    },
-    {
-      title: "Ecommerce Website ",
-      duration: { fromDate: "2020", toDate: "2021" },
-      description:
-        "Online ecommerce website for showcasing and selling products onlne with payment system integration, both Paypal and Stripe",
-      subHeading:
-        "Technologies Used: Mongo DB, Epress Js, React Js, Node JS, Redux, Bootstrap.",
-    },
-  ];
+  // COMMENTED OUT - Đã có trang Skills riêng
+  // const programmingSkillsDetails = [
+  //   { skill: "JavaScript", ratingPercentage: 85 },
+  //   { skill: "React JS", ratingPercentage: 85 },
+  //   { skill: "React Native", ratingPercentage: 85 },
+  //   { skill: "Express JS", ratingPercentage: 89 },
+  //   { skill: "Node JS", ratingPercentage: 89 },
+  //   { skill: "Mongo Db", ratingPercentage: 70 },
+  //   { skill: "Core Java", ratingPercentage: 80 },
+  //   { skill: "HTML", ratingPercentage: 80 },
+  //   { skill: "CSS", ratingPercentage: 80 },
+  // ];
+
+  // COMMENTED OUT - Đã có trang Projects riêng
+  // const projectsDetails = [
+  //   {
+  //     title: "Personal Portfolio Website",
+  //     duration: { fromDate: "2020", toDate: "2021" },
+  //     description:
+  //       "A Personal Portfolio website to showcase all my details and projects at one place.",
+  //     subHeading: "Technologies Used: React JS, Bootsrap",
+  //   },
+  //   {
+  //     title: "Mobile E-shop ",
+  //     duration: { fromDate: "2020", toDate: "2021" },
+  //     description:
+  //       "An ecommerce application designed to sell products online wth payment system integration",
+  //     subHeading:
+  //       "Technologies Used:  React Native, Mongo DB, Express Js, Node Js, Redux.",
+  //   },
+  //   {
+  //     title: "Ecommerce Website ",
+  //     duration: { fromDate: "2020", toDate: "2021" },
+  //     description:
+  //       "Online ecommerce website for showcasing and selling products onlne with payment system integration, both Paypal and Stripe",
+  //     subHeading:
+  //       "Technologies Used: Mongo DB, Epress Js, React Js, Node JS, Redux, Bootstrap.",
+  //   },
+  // ];
+
+  // VÍ DỤ: Thêm dữ liệu Certifications
+  // const certificationsDetails = [
+  //   {
+  //     title: "Microsoft Certified: Azure Fundamentals",
+  //     date: "2024",
+  //     description: "Certification in cloud computing fundamentals",
+  //   },
+  // ];
+
+  // VÍ DỤ: Thêm dữ liệu Languages
+  // const languagesDetails = [
+  //   { language: "Vietnamese", level: "Native" },
+  //   { language: "English", level: "Professional Working Proficiency" },
+  // ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
-        heading={"University of Legon Accra, Ghana"}
-        subHeading={"BACHELOR OF SCIENCE INFORMATION TECHNOLOGY"}
-        fromDate={"2014"}
-        toDate={"2018"}
+        heading={"Dalat University"}
+        subHeading={"Information Technology Engineer, Major in Software Engineering"}
+        fromDate={"2022"}
+        toDate={"2027"}
       />
 
-      <ResumeHeading
-        heading={"National Youth Service Corps"}
-        subHeading={"Ministry Of Science And Technogy. Uyo Akwa Ibom State"}
-        fromDate={"2019"}
-        toDate={"2020"}
-      />
-      <ResumeHeading
-        heading={"High School "}
-        subHeading={"Command Secondary School Mbiri"}
-        fromDate={"2007"}
-        toDate={"2012"}
-      />
     </div>,
 
     /* WORK EXPERIENCE */
     <div className="resume-screen-container" key="work-experience">
       <div className="experience-container">
         <ResumeHeading
-          heading={"Ehizeex Technoloy"}
-          subHeading={"FULL STACK DEVELOPER INTERN"}
-          fromDate={"2021"}
+          heading={"Academic & Personal Projects"}
+          fromDate={"2023"}
           toDate={"Present"}
         />
+
         <div className="experience-description">
           <span className="resume-description-text">
-            Currently working as MERN stack web and mobile developer and also an
-            online instructor on udemy.
+            Gained hands-on experience in web backend and full-stack development following a client-server architecture through academic and personal projects.
           </span>
         </div>
+
         <div className="experience-description">
           <span className="resume-description-text">
-            - Developed an ecommerce website for client with the dashboard for
-            managing the products, managing reviews, users, payment etc. .
+            - Built e-commerce websites using ASP.NET MVC and ASP.NET Core with SQL Server and MySQL.
           </span>
           <br />
           <span className="resume-description-text">
-            - Integrated the web app with backend services to create new user
-            onboarding application with dynamic form content.{" "}
+            - Developed RESTful APIs and integrated frontend using React.js.
           </span>
           <br />
           <span className="resume-description-text">
-            - I stretch my mental capacity to develope UI as per the given
-            designs.
+            - Deployed frontend using Azure Static Web Apps and backend using Azure App Service.
           </span>
           <br />
+          <span className="resume-description-text">
+            - Deployed database using Azure Database for MySQL.
+          </span>
+          <br />
+          <span className="resume-description-text">
+            - Configured CI/CD pipelines with GitHub Actions for automated build and deployment.
+          </span>
+          <br />
+          <span className="resume-description-text">
+            - Created an Android chat application using Java and Firebase.
+          </span>
         </div>
       </div>
     </div>,
 
-    /* PROGRAMMING SKILLS */
-    <div
-      className="resume-screen-container programming-skills-container"
-      key="programming-skills"
-    >
-      {programmingSkillsDetails.map((skill, index) => (
-        <div className="skill-parent" key={index}>
-          <div className="heading-bullet"></div>
-          <span>{skill.skill}</span>
-          <div className="skill-percentage">
-            <div
-              style={{ width: skill.ratingPercentage + "%" }}
-              className="active-percentage-bar"
-            ></div>
-          </div>
-        </div>
-      ))}
-    </div>,
+    /* TODO: THÊM PHẦN MỚI Ở ĐÂY (thay thế Programming Skills & Projects) */
 
-    /* PROJECTS */
-    <div className="resume-screen-container" key="projects">
-      {projectsDetails.map((projectsDetails, index) => (
-        <ResumeHeading
-          key={index}
-          heading={projectsDetails.title}
-          subHeading={projectsDetails.subHeading}
-          description={projectsDetails.description}
-          fromDate={projectsDetails.duration.fromDate}
-          toDate={projectsDetails.duration.toDate}
-        />
-      ))}
-    </div>,
+    // VÍ DỤ: Certifications Section
+    // <div className="resume-screen-container" key="certifications">
+    //   {certificationsDetails.map((cert, index) => (
+    //     <ResumeHeading
+    //       key={index}
+    //       heading={cert.title}
+    //       description={cert.description}
+    //       fromDate={cert.date}
+    //       toDate={""}
+    //     />
+    //   ))}
+    // </div>,
+
+    // VÍ DỤ: Languages Section  
+    // <div className="resume-screen-container" key="languages">
+    //   {languagesDetails.map((lang, index) => (
+    //     <div className="skill-parent" key={index}>
+    //       <div className="heading-bullet"></div>
+    //       <span>{lang.language}</span>
+    //       <span className="skill-percentage">{lang.level}</span>
+    //     </div>
+    //   ))}
+    // </div>,
+
+    /* COMMENTED OUT - PROGRAMMING SKILLS (Đã có trang Skills riêng) */
+    // <div
+    //   className="resume-screen-container programming-skills-container"
+    //   key="programming-skills"
+    // >
+    //   {programmingSkillsDetails.map((skill, index) => (
+    //     <div className="skill-parent" key={index}>
+    //       <div className="heading-bullet"></div>
+    //       <span>{skill.skill}</span>
+    //       <div className="skill-percentage">
+    //         <div
+    //           style={{ width: skill.ratingPercentage + "%" }}
+    //           className="active-percentage-bar"
+    //         ></div>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div>,
+
+    /* COMMENTED OUT - PROJECTS (Đã có trang Projects riêng) */
+    // <div className="resume-screen-container" key="projects">
+    //   {projectsDetails.map((projectsDetails, index) => (
+    //     <ResumeHeading
+    //       key={index}
+    //       heading={projectsDetails.title}
+    //       subHeading={projectsDetails.subHeading}
+    //       description={projectsDetails.description}
+    //       fromDate={projectsDetails.duration.fromDate}
+    //       toDate={projectsDetails.duration.toDate}
+    //     />
+    //   ))}
+    // </div>,
 
     /* Interests */
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
-        heading="Teaching"
-        description="Apart from being a tech enthusiast and a code writer, i also love to teach people what i know simply because i believe in sharing."
-      />
-      <ResumeHeading
         heading="Music"
-        description="Listening to soothing music is something i can never compromise with, skimming through Spotify's pop songs charts is at times the best stress reliever that i can get my hands on."
+        description="I enjoy listening to music while coding to stay focused and motivated."
       />
       <ResumeHeading
-        heading="Competitive Gaming"
-        description="I like to challenge my reflexes a lot while competing in football games, pushing the rank and having interactive gaming sessions excites me the most."
+        heading="Rest & Relaxation"
+        description="Getting enough rest helps me recharge and maintain productivity."
+      />
+      <ResumeHeading
+        heading="Coding Practice"
+        description="I spend free time practicing coding and learning new technologies."
       />
     </div>,
   ];
 
   const handleCarousal = (index) => {
+    // Lấy chiều cao thực tế của container thay vì hard-code 360
     let offsetHeight = 360;
+    if (containerRef.current) {
+      const container = containerRef.current.querySelector('.resume-screen-container');
+      if (container) {
+        offsetHeight = container.offsetHeight;
+      }
+    }
 
     let newCarousalOffset = {
       style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
@@ -231,6 +288,7 @@ const Resume = (props) => {
   const getResumeScreens = () => {
     return (
       <div
+        ref={containerRef}
         style={carousalOffsetStyle.style}
         className="resume-details-carousal"
       >

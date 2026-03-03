@@ -12,11 +12,11 @@ export default function AboutMe(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const SCREEN_CONSTSANTS = {
+  const SCREEN_CONSTANTS = {
     name: "I'm Quoc Lam",
     title: "Web Backend Developer",
     description:
-      "A junior backend developer who enjoys building web applications with ASP.NET MVC and designing RESTful APIs, while continuously learning modern technologies like React, Node.js, and Express.",
+      "Backend-focused developer with experience in ASP.NET MVC/Core and RESTful APIs. Skilled in Azure deployment, CI/CD with GitHub Actions, and expanding expertise in React and Node.js. Passionate about building efficient, scalable solutions.",
     email: "nguyenlequoclam@gmail.com",
     place: "Da Lat city, Vietnam",
   };
@@ -31,21 +31,21 @@ export default function AboutMe(props) {
         <div className="about-me-card">
           <div className="about-me-profile"></div>
           <div className="about-me-details">
-            <h1 className="about-me-name">{SCREEN_CONSTSANTS.name}</h1>
+            <h1 className="about-me-name">{SCREEN_CONSTANTS.name}</h1>
             <div className="about-me-title">
-              <span>{SCREEN_CONSTSANTS.title}</span>
+              <span>{SCREEN_CONSTANTS.title}</span>
             </div>
             <p className="about-me-description">
-              {SCREEN_CONSTSANTS.description}
+              {SCREEN_CONSTANTS.description}
             </p>
             <div className="about-me-info">
               <div className="info-item">
                 <span className="info-label">Email :</span>
-                <span className="info-value">{SCREEN_CONSTSANTS.email}</span>
+                <span className="info-value">{SCREEN_CONSTANTS.email}</span>
               </div>
               <div className="info-item">
                 <span className="info-label">Place :</span>
-                <span className="info-value">{SCREEN_CONSTSANTS.place}</span>
+                <span className="info-value">{SCREEN_CONSTANTS.place}</span>
               </div>
             </div>
             <div className="about-me-options">
