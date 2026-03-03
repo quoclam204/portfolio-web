@@ -44,7 +44,7 @@ export default function Profile() {
             </h1>
 
             <span className="profile-role-tagline">
-              I enjoy building backend systems and learning new technologies.
+              I love building backend systems and learning new tech.
             </span>
           </div>
           <div className="profile-options">
