@@ -5,53 +5,126 @@
   align-items: center;
   margin: 50px 0 0 0;
 }
+
 .about-me-parent {
   max-width: 1000px;
   width: 70%;
 }
+
 .about-me-card {
   display: flex;
+  align-items: center;
+  gap: 40px;
   width: 100%;
-  box-shadow: 0 0px 20px -2px #1f2235;
+  margin-top: 0;
 }
+
 .about-me-profile {
-  width: 50%;
+  width: 280px;
+  height: 360px;
   background-image: url("../../assets/AboutMe/me2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
+
 .about-me-details {
-  width: 48%;
-  text-align: justify;
-  padding: 30px;
-}
-.about-me-description {
-  font-size: 12px;
-}
-.about-me-highlights {
-  margin: 80px 0;
-}
-.highlght-heading {
-  font-family: "Poppins Bold";
-  font-size: 14px;
-  margin: 0 0 5px 0;
-}
-.highlight {
+  flex: 1;
+  padding: 20px;
   display: flex;
-  align-items: center;
-  margin: 5px 0;
-  font-size: 12px;
+  flex-direction: column;
+  justify-content: center;
 }
-.highlight-blob {
-  height: 12px;
-  width: 12px;
-  margin: 0 10px 0 0;
-  background-color: #ff5823;
-  border-radius: 50%;
+
+.about-me-name {
+  font-size: 36px;
+  font-family: "Poppins Bold";
+  margin: 0 0 15px 0;
+  color: #1f2235;
 }
+
+.about-me-title {
+  display: inline-block;
+  margin: 0 0 20px 0;
+}
+
+.about-me-title span {
+  background-color: #ffe8e0;
+  color: #ff5823;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.about-me-description {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5a5a5a;
+  margin: 0 0 25px 0;
+  text-align: left;
+}
+
+.about-me-info {
+  margin: 0 0 30px 0;
+}
+
+.info-item {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.info-label {
+  color: #ff5823;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.info-value {
+  color: #5a5a5a;
+}
+
+.about-me-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.about-me-options .btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-me-options .primary-btn {
+  background-color: #2c2f48;
+  color: white;
+}
+
+.about-me-options .primary-btn:hover {
+  background-color: #1f2235;
+  transform: translateY(-2px);
+}
+
 .about-me-options .highlighted-btn {
-  margin: 0 0 0 30px;
+  background-color: #ff5823;
+  color: white;
+}
+
+.about-me-options .highlighted-btn:hover {
+  background-color: #e64a1f;
+  transform: translateY(-2px);
+}
+
+.about-me-options a {
+  text-decoration: none;
 }
 
 /*IPAD PRO RESPONSIVENESS*/
@@ -59,23 +132,50 @@
   .about-me-parent {
     width: 88%;
   }
-}
-@media only screen and (max-width: 898px) {
+
   .about-me-profile {
-    display: none;
+    width: 240px;
+    height: 320px;
   }
+}
+
+@media only screen and (max-width: 898px) {
+  .about-me-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-profile {
+    width: 280px;
+    height: 360px;
+    margin-bottom: 30px;
+  }
+
   .about-me-details {
     width: 100%;
+    text-align: center;
+  }
+
+  .about-me-description {
+    text-align: center;
   }
 }
+
 @media only screen and (max-width: 466px) {
+  .about-me-profile {
+    width: 240px;
+    height: 300px;
+  }
+
+  .about-me-name {
+    font-size: 28px;
+  }
+
   .about-me-options {
-    display: flex;
     flex-direction: column;
+    width: 100%;
   }
-  .about-me-options .highlighted-btn {
-    margin: 24px 0 0 0 !important;
-  }
+
   .about-me-options button {
     width: 100%;
   }
