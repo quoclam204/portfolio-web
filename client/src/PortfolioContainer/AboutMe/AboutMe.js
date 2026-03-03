@@ -16,7 +16,7 @@ export default function AboutMe(props) {
     name: "I'm Quoc Lam",
     title: "Web Backend Developer",
     description:
-      "A junior backend developer with experience in building web applications using ASP.NET MVC. I enjoy working with RESTful APIs, databases, and learning modern web technologies like React and Node.js.",
+      "A junior backend developer who enjoys building web applications with ASP.NET MVC and designing RESTful APIs, while continuously learning modern technologies like React, Node.js, and Express.",
     email: "nguyenlequoclam@gmail.com",
     place: "Da Lat city, Vietnam",
   };
