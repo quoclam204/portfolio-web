@@ -16,9 +16,9 @@ export default function AboutMe(props) {
     name: "I'm Quoc Lam",
     title: "Web Backend Developer",
     description:
-      "Backend-focused developer with experience in ASP.NET MVC/Core and RESTful APIs. Skilled in Azure deployment, CI/CD with GitHub Actions, and expanding expertise in React and Node.js. Passionate about building efficient, scalable solutions.",
+      "I am a backend-focused developer currently majoring in Software Engineering at Dalat University. I am passionate about building efficient and scalable web applications, continuously learning modern technologies, and improving myself as a software engineer every day.",
     email: "nguyenlequoclam@gmail.com",
-    place: "Da Lat city, Vietnam",
+    place: "Da Lat, Vietnam",
   };
 
   return (
