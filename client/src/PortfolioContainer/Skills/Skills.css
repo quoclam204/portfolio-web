@@ -1,5 +1,5 @@
 .skills-section {
-    padding: 0 0 50px 0;
+  margin: 50px 0 0 0;
   position: relative;
 }
 
@@ -9,7 +9,7 @@
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .skill-category {
