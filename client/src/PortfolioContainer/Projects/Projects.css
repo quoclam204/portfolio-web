@@ -14,18 +14,18 @@
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin-top: 20px;
 }
 
 /* Project Item Styling */
 .project-item {
     position: relative;
-    border-radius: 25px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 350px;
+    height: 320px;
     cursor: pointer;
 }
 
@@ -158,14 +158,14 @@
 }
 
 .btn-code {
-    background: #5B4FFF;
+    background: #ff5823;
     color: white;
 }
 
 .btn-code:hover {
-    background: #4A3FE8;
+    background: #e04a1a;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(91, 79, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(255, 88, 35, 0.5);
 }
 
 /* Responsive Design */
@@ -178,7 +178,7 @@
 
 @media only screen and (max-width: 1024px) {
     .project-item {
-        height: 320px;
+        height: 300px;
     }
 
     .project-name {
