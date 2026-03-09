@@ -76,7 +76,7 @@ export default function Projects(props) {
     ];
 
     return (
-        <div className="fade-in" id={props.id || ""}>
+        <div className="projects-section-page fade-in" id={props.id || ""}>
             <ScreenHeading
                 title={"Projects"}
                 subHeading={"My Recent Works"}

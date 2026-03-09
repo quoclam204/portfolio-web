@@ -45,7 +45,7 @@ export default function Skills(props) {
   ];
 
   return (
-    <div className="fade-in" id={props.id || ""}>
+    <div className="skills-section-page fade-in" id={props.id || ""}>
       <ScreenHeading title={"Skills"} subHeading={"My Technical Skills"} />
       <section className="skills-section">
         <div className="container">
