@@ -30,6 +30,12 @@
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.about-me-profile:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .about-me-details {
@@ -101,7 +107,7 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .about-me-options .primary-btn {
@@ -111,7 +117,8 @@
 
 .about-me-options .primary-btn:hover {
   background-color: #1f2235;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(31, 34, 53, 0.25);
 }
 
 .about-me-options .highlighted-btn {
@@ -121,7 +128,8 @@
 
 .about-me-options .highlighted-btn:hover {
   background-color: #e64a1f;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 88, 35, 0.3);
 }
 
 .about-me-options a {

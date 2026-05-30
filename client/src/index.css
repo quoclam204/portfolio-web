@@ -47,6 +47,10 @@
   src: url("./assets/fonts/Poppins-Thin.ttf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   outline: none;
 }
@@ -86,7 +90,7 @@ body ::-webkit-scrollbar-thumb {
   padding: 14px 0;
   width: 160px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-family: "Poppins SemiBold";
 }
 
@@ -100,6 +104,7 @@ body ::-webkit-scrollbar-thumb {
   font-size: 12px;
   background-color: #1f2235;
 }
+
 /* @media only screen and (max-width: 414px) {
   .primary-btn {
     font-size: 13px;
@@ -118,6 +123,7 @@ body ::-webkit-scrollbar-thumb {
   font-size: 12px;
   background-color: #ff5823;
 }
+
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
     z-index: -900;
