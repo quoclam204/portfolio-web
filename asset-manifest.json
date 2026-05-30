@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.46eb6e24.chunk.css",
-    "main.js": "/static/js/main.9a5fddcc.chunk.js",
-    "main.js.map": "/static/js/main.9a5fddcc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f85a07bf.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f85a07bf.js.map",
+    "main.css": "/static/css/main.9010e12c.chunk.css",
+    "main.js": "/static/js/main.3a39c835.chunk.js",
+    "main.js.map": "/static/js/main.3a39c835.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ef743b82.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ef743b82.js.map",
     "static/css/2.68b64559.chunk.css": "/static/css/2.68b64559.chunk.css",
-    "static/js/2.31901780.chunk.js": "/static/js/2.31901780.chunk.js",
-    "static/js/2.31901780.chunk.js.map": "/static/js/2.31901780.chunk.js.map",
-    "static/js/3.2b857f66.chunk.js": "/static/js/3.2b857f66.chunk.js",
-    "static/js/3.2b857f66.chunk.js.map": "/static/js/3.2b857f66.chunk.js.map",
+    "static/js/2.b959238f.chunk.js": "/static/js/2.b959238f.chunk.js",
+    "static/js/2.b959238f.chunk.js.map": "/static/js/2.b959238f.chunk.js.map",
+    "static/js/3.45ee11f1.chunk.js": "/static/js/3.45ee11f1.chunk.js",
+    "static/js/3.45ee11f1.chunk.js.map": "/static/js/3.45ee11f1.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.68b64559.chunk.css.map": "/static/css/2.68b64559.chunk.css.map",
-    "static/css/main.46eb6e24.chunk.css.map": "/static/css/main.46eb6e24.chunk.css.map",
-    "static/js/2.31901780.chunk.js.LICENSE.txt": "/static/js/2.31901780.chunk.js.LICENSE.txt",
+    "static/css/main.9010e12c.chunk.css.map": "/static/css/main.9010e12c.chunk.css.map",
+    "static/js/2.b959238f.chunk.js.LICENSE.txt": "/static/js/2.b959238f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Poppins-Thin.a61eaf4c.ttf",
     "static/media/Home.css": "/static/media/bg.d580cd37.jpg",
     "static/media/chatting-app.d67ceb88.png": "/static/media/chatting-app.d67ceb88.png",
@@ -30,10 +30,10 @@
     "static/media/work-history.svg": "/static/media/work-history.a566475d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f85a07bf.js",
+    "static/js/runtime-main.ef743b82.js",
     "static/css/2.68b64559.chunk.css",
-    "static/js/2.31901780.chunk.js",
-    "static/css/main.46eb6e24.chunk.css",
-    "static/js/main.9a5fddcc.chunk.js"
+    "static/js/2.b959238f.chunk.js",
+    "static/css/main.9010e12c.chunk.css",
+    "static/js/main.3a39c835.chunk.js"
   ]
 }
