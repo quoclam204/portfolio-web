@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -10,6 +11,7 @@ import techgearshopImg from "../../assets/Projects/techgearshop.png";
 
 
 export default function Projects(props) {
+    const { t } = useTranslation();
     let fadeInScreenHandler = (screen) => {
         if (screen.fadeInScreen !== props.id) return;
         Animations.animations.fadeInScreen(props.id);
@@ -26,7 +28,7 @@ export default function Projects(props) {
             technologies: ["React", "Node.js", "MongoDB", "Express"],
             codeUrl: "https://github.com/quoclam204/DoAnCoSoMVC",
             liveUrl: "https://yourproject.com",
-            description: "A full-stack e-commerce platform with shopping cart and payment integration"
+            description: t("projects.desc1")
         },
         {
             id: 2,
@@ -35,7 +37,7 @@ export default function Projects(props) {
             technologies: ["React", "Firebase", "Material-UI"],
             codeUrl: "https://github.com/quoclam204/do-an-chuyen-nganh",
             liveUrl: "https://taskapp.com",
-            description: "A collaborative task management application with real-time updates"
+            description: t("projects.desc2")
         },
         {
             id: 3,
@@ -44,7 +46,7 @@ export default function Projects(props) {
             technologies: ["JavaScript", "API", "CSS3", "HTML5"],
             codeUrl: "https://github.com/quoclam204/Chatting-app",
             liveUrl: "https://weather-dashboard.com",
-            description: "Real-time weather information with interactive maps and forecasts"
+            description: t("projects.desc3")
         },
         {
             id: 4,
@@ -53,7 +55,7 @@ export default function Projects(props) {
             technologies: ["ASP.NET MVC", "C#", "Bootstrap 5", "JavaScript", "SCSS"],
             codeUrl: "https://github.com/quoclam204/TechGearShop",
             liveUrl: "https://techgearshop.com",
-            description: "E-commerce platform for tech products built with ASP.NET MVC architecture"
+            description: t("projects.desc4")
         },
         {
             id: 5,
@@ -62,7 +64,7 @@ export default function Projects(props) {
             technologies: ["Python", "Automation", "API"],
             codeUrl: "https://github.com/yourusername/automation-tool",
             liveUrl: "https://automation-tool.com",
-            description: "Automated workflow tool to streamline daily tasks and improve productivity"
+            description: t("projects.desc5")
         },
         {
             id: 6,
@@ -71,15 +73,15 @@ export default function Projects(props) {
             technologies: ["ETL", "Database", "Cloud"],
             codeUrl: "https://github.com/yourusername/data-pipeline",
             liveUrl: "https://data-pipeline.com",
-            description: "Scalable data processing pipeline for ETL operations and analytics"
+            description: t("projects.desc6")
         },
     ];
 
     return (
         <div className="projects-section-page fade-in" id={props.id || ""}>
             <ScreenHeading
-                title={"Projects"}
-                subHeading={"My Recent Works"}
+                title={t("projects.title")}
+                subHeading={t("projects.subHeading")}
             />
             <section className="projects-section">
                 <div className="container">
@@ -106,7 +108,7 @@ export default function Projects(props) {
                                                     rel="noopener noreferrer"
                                                     className="btn btn-live"
                                                 >
-                                                    <i className="fa fa-external-link"></i> View
+                                                    <i className="fa fa-external-link"></i> {t("projects.view")}
                                                 </a>
                                                 <a
                                                     href={project.codeUrl}
@@ -114,7 +116,7 @@ export default function Projects(props) {
                                                     rel="noopener noreferrer"
                                                     className="btn btn-code"
                                                 >
-                                                    <i className="fa fa-code"></i> Code
+                                                    <i className="fa fa-code"></i> {t("projects.code")}
                                                 </a>
                                             </div>
                                         </div>

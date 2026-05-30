@@ -37,7 +37,21 @@
 .selected-header-option {
   color: var(--dark-orange);
 }
-
+.language-switch {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 50px;
+}
+.active-lang {
+  color: var(--dark-orange);
+}
+.lang-separator {
+  margin: 0 5px;
+  color: var(--white);
+}
 /*IPAD PRO RESPONSIVENESS*/
 @media only screen and (max-width: 1110px) {
   header-parent {
@@ -82,5 +96,8 @@
   .show-hamburger-options {
     left: 0;
     opacity: 1;
+  }
+  .language-switch {
+    margin-left: 0;
   }
 }

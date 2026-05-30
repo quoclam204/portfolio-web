@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./Skills.css";
 
 export default function Skills(props) {
+  const { t } = useTranslation();
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -15,7 +17,7 @@ export default function Skills(props) {
 
   const skillCategories = [
     {
-      title: "Languages",
+      title: t("skills.languages"),
       skills: [
         { name: "C", icon: "devicon-c-plain colored" },
         { name: "C#", icon: "devicon-csharp-plain colored" },
@@ -25,7 +27,7 @@ export default function Skills(props) {
       ],
     },
     {
-      title: "Frameworks & Platforms",
+      title: t("skills.frameworks"),
       skills: [
         { name: ".NET", icon: "devicon-dotnetcore-plain colored" },
         { name: "Node.js", icon: "devicon-nodejs-plain colored" },
@@ -34,7 +36,7 @@ export default function Skills(props) {
       ],
     },
     {
-      title: "Web & Database",
+      title: t("skills.webAndDb"),
       skills: [
         { name: "HTML5", icon: "devicon-html5-plain colored" },
         { name: "CSS3", icon: "devicon-css3-plain colored" },
@@ -46,7 +48,7 @@ export default function Skills(props) {
 
   return (
     <div className="skills-section-page fade-in" id={props.id || ""}>
-      <ScreenHeading title={"Skills"} subHeading={"My Technical Skills"} />
+      <ScreenHeading title={t("skills.title")} subHeading={t("skills.subHeading")} />
       <section className="skills-section">
         <div className="container">
           <div className="skills-wrapper">

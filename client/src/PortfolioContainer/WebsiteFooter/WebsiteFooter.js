@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./WebsiteFooter.css";
 
 export default function WebsiteFooter() {
+    const { t } = useTranslation();
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -13,23 +15,23 @@ export default function WebsiteFooter() {
         <footer className="website-footer">
             <div className="footer-content">
                 <div className="footer-section">
-                    <h3>Nguyen Le Quoc Lam</h3>
-                    <p>Backend Web Developer</p>
+                    <h3>{t("footer.title")}</h3>
+                    <p>{t("footer.subtitle")}</p>
                 </div>
 
                 <div className="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>{t("footer.quickLinks")}</h4>
                     <ul>
-                        <li><a onClick={() => scrollToSection("Home")}>Home</a></li>
-                        <li><a onClick={() => scrollToSection("AboutMe")}>About</a></li>
-                        <li><a onClick={() => scrollToSection("Resume")}>Resume</a></li>
-                        <li><a onClick={() => scrollToSection("Projects")}>Projects</a></li>
-                        <li><a onClick={() => scrollToSection("ContactMe")}>Contact</a></li>
+                        <li><a onClick={() => scrollToSection("Home")}>{t("nav.Home")}</a></li>
+                        <li><a onClick={() => scrollToSection("AboutMe")}>{t("nav.AboutMe")}</a></li>
+                        <li><a onClick={() => scrollToSection("Resume")}>{t("nav.Resume")}</a></li>
+                        <li><a onClick={() => scrollToSection("Projects")}>{t("nav.Projects")}</a></li>
+                        <li><a onClick={() => scrollToSection("ContactMe")}>{t("nav.ContactMe")}</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section">
-                    <h4>Connect With Me</h4>
+                    <h4>{t("footer.connect")}</h4>
                     <div className="social-links">
                         <a href="https://www.facebook.com/quoclam.nguyen.52643/" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-facebook-square" />
@@ -48,7 +50,7 @@ export default function WebsiteFooter() {
             </div>
 
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Nguyen Le Quoc Lam. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} {t("footer.rights")}</p>
             </div>
         </footer>
     );

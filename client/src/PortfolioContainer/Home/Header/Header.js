@@ -6,11 +6,21 @@ import {
 import ScrollService from "../../../utilities/ScrollService";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 import "./Header.css";
 
 export default function Header() {
+  const { t, i18n } = useTranslation();
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+  const [language, setLanguage] = useState(i18n.language || "VN");
+
+  const toggleLanguage = (e) => {
+    e.stopPropagation(); // Prevent header click from toggling options
+    const newLang = language === "EN" ? "VN" : "EN";
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang);
+  };
 
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
@@ -28,7 +38,7 @@ export default function Header() {
         className={getHeaderOptionsClasses(i)}
         onClick={() => switchScreen(i, Screen)}
       >
-        <span>{Screen.screen_name}</span>
+        <span>{t("nav." + Screen.screen_name)}</span>
       </div>
     ));
   };
@@ -80,6 +90,11 @@ export default function Header() {
           }
         >
           {getHeaderOptions()}
+          <div className="language-switch" onClick={toggleLanguage}>
+            <span className={language === "VN" ? "active-lang" : ""}>VN</span>
+            <span className="lang-separator">/</span>
+            <span className={language === "EN" ? "active-lang" : ""}>EN</span>
+          </div>
         </div>
       </div>
     </div>

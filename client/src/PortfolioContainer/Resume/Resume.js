@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./Resume.css";
 
 const Resume = (props) => {
+  const { t } = useTranslation();
   /* STATES */
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
@@ -45,14 +47,14 @@ const Resume = (props) => {
 
   /* STATIC RESUME DATA FOR THE LABELS*/
   const resumeBullets = [
-    { label: "Education", logoSrc: "education.svg" },
-    { label: "Work History", logoSrc: "work-history.svg" },
+    { label: t("resume.education"), logoSrc: "education.svg" },
+    { label: t("resume.workHistory"), logoSrc: "work-history.svg" },
     // TODO: Thêm phần mới thay thế Programming Skills (ví dụ: Certifications, Languages, Awards)
     // { label: "Certifications", logoSrc: "certifications.svg" },
     // { label: "Languages", logoSrc: "languages.svg" },
     // TODO: Thêm phần mới thay thế Projects (đã có trang Projects riêng)
     // { label: "Awards", logoSrc: "awards.svg" },
-    { label: "Interests", logoSrc: "interests.svg" },
+    { label: t("resume.interests"), logoSrc: "interests.svg" },
   ];
 
   /* TODO: THÊM DỮ LIỆU MỚI THAY THẾ Programming Skills và Projects
@@ -121,8 +123,8 @@ const Resume = (props) => {
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
-        heading={"Dalat University"}
-        subHeading={"Information Technology Engineer, Major in Software Engineering"}
+        heading={t("resume.eduSchool")}
+        subHeading={t("resume.eduDegree")}
         fromDate={"2022"}
         toDate={"2027"}
       />
@@ -133,40 +135,40 @@ const Resume = (props) => {
     <div className="resume-screen-container" key="work-experience">
       <div className="experience-container">
         <ResumeHeading
-          heading={"Academic & Personal Projects"}
+          heading={t("resume.workTitle")}
           fromDate={"2023"}
           toDate={"Present"}
         />
 
         <div className="experience-description">
           <span className="resume-description-text">
-            Gained hands-on experience in web backend and full-stack development following a client-server architecture through academic and personal projects.
+            {t("resume.workDesc1")}
           </span>
         </div>
 
         <div className="experience-description">
           <span className="resume-description-text">
-            - Built e-commerce websites using ASP.NET MVC and ASP.NET Core with SQL Server and MySQL.
+            {t("resume.workDesc2")}
           </span>
           <br />
           <span className="resume-description-text">
-            - Developed RESTful APIs and integrated frontend using React.js.
+            {t("resume.workDesc3")}
           </span>
           <br />
           <span className="resume-description-text">
-            - Deployed frontend using Azure Static Web Apps and backend using Azure App Service.
+            {t("resume.workDesc4")}
           </span>
           <br />
           <span className="resume-description-text">
-            - Deployed database using Azure Database for MySQL.
+            {t("resume.workDesc5")}
           </span>
           <br />
           <span className="resume-description-text">
-            - Configured CI/CD pipelines with GitHub Actions for automated build and deployment.
+            {t("resume.workDesc6")}
           </span>
           <br />
           <span className="resume-description-text">
-            - Created an Android chat application using Java and Firebase.
+            {t("resume.workDesc7")}
           </span>
         </div>
       </div>
@@ -234,16 +236,16 @@ const Resume = (props) => {
     /* Interests */
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
-        heading="Music"
-        description="I enjoy listening to music while coding to stay focused and motivated."
+        heading={t("resume.intMusic")}
+        description={t("resume.intMusicDesc")}
       />
       <ResumeHeading
-        heading="Rest & Relaxation"
-        description="Getting enough rest helps me recharge and maintain productivity."
+        heading={t("resume.intRest")}
+        description={t("resume.intRestDesc")}
       />
       <ResumeHeading
-        heading="Coding Practice"
-        description="I spend free time practicing coding and learning new technologies."
+        heading={t("resume.intCode")}
+        description={t("resume.intCodeDesc")}
       />
     </div>,
   ];
@@ -310,7 +312,7 @@ const Resume = (props) => {
       id={props.id || ""}
     >
       <div className="resume-content">
-        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <ScreenHeading title={t("resume.title")} subHeading={t("resume.subHeading")} />
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">

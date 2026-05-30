@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Typical from "react-typical";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -12,6 +13,7 @@ import Footer from "../../PortfolioContainer/footer/Footer";
 import "./ContactMe.css";
 
 export default function ContactMe(props) {
+  const { t } = useTranslation();
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -66,11 +68,11 @@ export default function ContactMe(props) {
 
   return (
     <div className="main-container fade-in" id={props.id || ""}>
-      <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
+      <ScreenHeading subHeading={t("contact.subHeading")} title={t("contact.title")} />
       <div className="central-form">
         <div className="col">
           <h2 className="title">
-            <Typical loop={Infinity} steps={["Get In Touch 📧", 1000]} />
+            <Typical loop={Infinity} steps={[t("contact.getInTouch"), 1000]} />
           </h2>{" "}
           <a href="https://www.facebook.com/quoclam.nguyen.52643/">
             <i className="fa fa-facebook-square" />
@@ -87,23 +89,23 @@ export default function ContactMe(props) {
         </div>
         <div className="back-form">
           <div className="img-back">
-            <h4>Send Your Email Here!</h4>
+            <h4>{t("contact.sendEmail")}</h4>
             <img src={imgBack} alt="image not found" />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{t("contact.name")}</label>
             <input type="text" onChange={handleName} value={name} />
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t("contact.email")}</label>
             <input type="email" onChange={handleEmail} value={email} />
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{t("contact.message")}</label>
             <textarea type="text" onChange={handleMessage} value={message} />
 
             <div className="send-btn">
               <button type="submit">
-                send
+                {t("contact.send")}
                 <i className="fa fa-paper-plane" />
                 {bool ? (
                   <b className="load">

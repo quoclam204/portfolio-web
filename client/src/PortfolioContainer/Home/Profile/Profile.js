@@ -1,9 +1,11 @@
 import React from "react";
 import Typical from "react-typical";
+import { useTranslation } from "react-i18next";
 import ScrollService from "../../../utilities/ScrollService";
 import "./Profile.css";
 
 export default function Profile() {
+  const { t } = useTranslation();
   return (
     <div className="profile-container">
       <div className="profile-parent">
@@ -27,7 +29,7 @@ export default function Profile() {
           <div className="profile-details-name">
             <span className="primary-text">
               {" "}
-              Hello, I'm <span className="highlighted-text">Nguyen Le Quoc Lam</span>
+              {t("profile.hello")} <span className="highlighted-text">Nguyen Le Quoc Lam</span>
             </span>
           </div>
           <div className="profile-details-role">
@@ -44,15 +46,15 @@ export default function Profile() {
             </h1>
 
             <span className="profile-role-tagline">
-              I love building backend systems and learning new tech.
+              {t("profile.tagline")}
             </span>
           </div>
           <div className="profile-options">
             <button className="btn primary-btn"
               onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
-            > Hire Me </button>
+            > {t("profile.hireMe")} </button>
             <a href="ehizcv.pdf" download="Ehiedu Ehizcv.pdf">
-              <button className="btn highlighted-btn">Get Resume</button>
+              <button className="btn highlighted-btn">{t("profile.getResume")}</button>
             </a>
           </div>
         </div>

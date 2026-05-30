@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
+  const { t } = useTranslation();
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -15,8 +17,7 @@ export default function AboutMe(props) {
   const SCREEN_CONSTANTS = {
     name: "I'm Quoc Lam",
     title: "Web Backend Developer",
-    description:
-      "I am a backend-focused developer currently majoring in Software Engineering at Dalat University. I am passionate about building efficient and scalable web applications, continuously learning modern technologies, and improving myself as a software engineer every day.",
+    description: t("aboutMe.description"),
     email: "nguyenlequoclam@gmail.com",
     place: "Da Lat, Vietnam",
   };
@@ -27,7 +28,7 @@ export default function AboutMe(props) {
       id={props.id || ""}
     >
       <div className="about-me-parent">
-        <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
+        <ScreenHeading title={t("aboutMe.title")} subHeading={t("aboutMe.subHeading")} />
         <div className="about-me-card">
           <div className="about-me-profile"></div>
           <div className="about-me-details">
@@ -40,11 +41,11 @@ export default function AboutMe(props) {
             </p>
             <div className="about-me-info">
               <div className="info-item">
-                <span className="info-label">Email :</span>
+                <span className="info-label">{t("aboutMe.email")}</span>
                 <span className="info-value">{SCREEN_CONSTANTS.email}</span>
               </div>
               <div className="info-item">
-                <span className="info-label">Place :</span>
+                <span className="info-label">{t("aboutMe.place")}</span>
                 <span className="info-value">{SCREEN_CONSTANTS.place}</span>
               </div>
             </div>
@@ -53,10 +54,10 @@ export default function AboutMe(props) {
                 className="btn primary-btn"
                 onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
               >
-                Hire Me
+                {t("profile.hireMe")}
               </button>
               <a href="ehizcv.pdf" download="Ehiedu Ehizcv.pdf">
-                <button className="btn highlighted-btn">Get Resume</button>
+                <button className="btn highlighted-btn">{t("profile.getResume")}</button>
               </a>
             </div>
           </div>
